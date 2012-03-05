@@ -2,20 +2,22 @@
 template<typename Object>
 class List{
 private:
-	struct Node;	
-	int theSize;
-	Node *head,*tail;
+	struct Node;	//存放节点信息	
+	int theSize;	//List包含的元素的个数
+	Node *head,*tail; //当容器为空的时候，有两个节点
 	
-	void init();
+	void init(); 
 public:
-	class const_iterator;
-	class iterator;
+	class const_iterator; //const迭带器
+	class iterator;			//迭带器
 
-	List();
+	List();//constructor
 	List( const List & rhs );
 	~List();
 	const List & operator= (const List & rhs );
-	
+	//the "Big Three"
+
+	//basic routines, easy to understand by name 
 	iterator begin();
 	iterator end();
 	const_iterator begin() const;
