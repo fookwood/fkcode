@@ -85,7 +85,7 @@ const List<Object> & List<Object>::operator= ( const List<Object> & rhs ){
 		push_back( *itr );
 	return *this;
 }
-
+// begin end 返回的是第一个元素和最后一个元素之后位置的迭代器
 template<typename Object>
 typename List<Object>::iterator List<Object>::begin() 
 	{ return iterator( List<Object>::head->next ); }
@@ -105,7 +105,7 @@ template<typename Object>
 bool List<Object>::empty() const { return size() == 0; }
 template<typename Object>
 void List<Object>::clear() { while( !empty() ) pop_front(); }
-
+//front back返回第一个和最后一个元素
 template<typename Object>
 Object & List<Object>::front() { return *begin(); }
 template<typename Object>
@@ -123,7 +123,7 @@ template<typename Object>
 void List<Object>::pop_front() { erase( begin() ); }
 template<typename Object>
 void List<Object>::pop_back() { erase( end() ); }
-	
+//很精简的插入元素的代码，在书上看到的
 template<typename Object>
 typename List<Object>::iterator List<Object>::insert
 	( List<Object>::iterator itr, const Object & x ){
@@ -232,16 +232,17 @@ int main ()
 		L.push_back( i*i );
 	for( int i = 0; i < 10; i++ )
 		L.insert( L.end(), i*i );
-		
+	//测试push_back 和 insert 
 
 	for( List<int>::iterator it = L.begin(); it != L.end(); it++ )
 		std::cout << *it << ' ';
 	std::cout << std::endl;
 	L.erase( --L.end() );
-	
+	//测试erase 和 ++运算符
 	std::cout << L.size() << std::endl;
 	for( List<int>::const_iterator it = L.begin(); it != L.end(); ++it )
 		std::cout << *it << ' ';
+	//测试const_iterator
 	std::cout << std::endl;
 	return 0;
 
