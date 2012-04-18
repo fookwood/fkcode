@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<string.h>
-
+//can be replaced by enum in Bitvector
 #define BITSPERWORD 32
 #define SHIFT 5
 #define MASK 0x1F
