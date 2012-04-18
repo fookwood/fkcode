@@ -1,5 +1,5 @@
 #include<iostream>
-
+#include<algorithm>
 template<typename Object>
 class Vector{
 private:
@@ -80,14 +80,12 @@ int main() {
 	Vector<int> V;
 	for( int i = 0; i < 100; i++ )
 		V.push_back( i );
-
-	for( Vector<int>::iterator it = V.begin(); it != V.end(); it++ )
-		std::cout << *it << std::endl;
+	V.push_back(1);
 	
 	const Vector<int> v( V );
+	std::sort(V.begin(), V.end());
 	for( Vector<int>::const_iterator it = V.begin(); 
 			it != V.end(); it++ )
 		std::cout << *it << std::endl;
-
 	return 0;
 }
