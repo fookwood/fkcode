@@ -102,7 +102,7 @@ LL euler( LL n ){
 }
 
 //质因数分解，求所有可能的组合
-class Divprime{
+class DivPrime{
 public:
 	vector<LL> Factor;
 	vector< pair<LL,LL> > V;
