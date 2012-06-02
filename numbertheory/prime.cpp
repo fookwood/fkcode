@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string>
+#include<cstdlib>
 #include<vector>
 #include<cmath>
 
@@ -34,7 +35,7 @@ void xianxingshai( void ){
 const int len = 1000000;
 bool isprime[ len ];
 void nlognprime( int n ){
-	fill( ispirme, isprime+len, true );
+	fill( isprime, isprime+len, true );
 	isprime[0] = isprime[1] = false;
 	int i, j, m = (int)sqrt(n+0.5);
 	for( i = 2; i <= m; i++ )
