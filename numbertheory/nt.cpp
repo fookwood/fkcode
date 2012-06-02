@@ -68,6 +68,14 @@ LL CRT( LL *a, LL *n, LL k ){
 	}
 	return ans;
 }
+//快速幂
+LL fastpow( LL n, LL x ){
+	if( x == LL(0) ) return 1;
+	if( x == LL(1) ) return n;
+	LL v = fastpow( n, x>>1 );
+	if( x%2 ) return v*v*n;
+	return v*v;
+}
 
 //快速幂模
 LL fastmod( LL a, LL k, LL M ){
