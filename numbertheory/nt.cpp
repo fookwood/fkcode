@@ -3,14 +3,6 @@
 #include<vector>
 using namespace std;
 
-/******
-
-  unfinished...   
-			
-		--fookwood
-
-******/
-
 typedef long long LL;
 //求绝对值
 LL abs( LL a ){
