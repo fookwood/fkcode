@@ -78,16 +78,19 @@ LL fastpow( LL n, LL x ){
 }
 
 //快速幂模
-LL fastmod( LL a, LL k, LL M ){
-	LL b = 1ll;
-	while( k ){
-		if( k&1 )
-			b = a*b%M;
-		a = (a%M)*(a%M)%M;
-		k >> 1;
-	}
-	return b;
+LL fastmod(LL a, LL b, LL k)
+{
+    LL tmp = a%k, ret = 1ll;
+    while (b)
+    {
+        if (b & 1ll)
+            ret = ret * tmp % k;
+        tmp = tmp * tmp % k;
+        b >>= 1ll;
+    }
+    return ret;
 }
+
 
 //欧拉函数
 LL euler( LL n ){

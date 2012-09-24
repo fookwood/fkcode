@@ -49,15 +49,17 @@ void nlognprime( int n ){
 typedef long long LL;
 
 //快速幂模。。。 求b=a^k%M，nt.cpp中已经包含了
-LL fastmod(LL a,LL k,LL M){
-    LL b = 1;
-    while( k ){
-        if( k&1 )
-            b = a*b%M;
-        a = (a%M)*(a%M)%M;
-        k /= 2;
+LL fastmod(LL a, LL b, LL k)
+{
+    LL tmp = a%k, ret = 1ll;
+    while (b)
+    {
+        if (b & 1ll)
+            ret = ret * tmp % k;
+        tmp = tmp * tmp % k;
+        b >>= 1ll;
     }
-    return b;
+    return ret;
 }
 LL witness( LL a,LL n ){
     LL u = n-1,t = 0;
